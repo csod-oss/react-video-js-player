@@ -148,7 +148,7 @@ VideoPlayer.defaultProps = {
   poster: '',
   preload: 'auto',
   src: '',
-  withCredentials: false
+  withCredentials: true
 };
 
 export default VideoPlayer;
