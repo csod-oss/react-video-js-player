@@ -1,18 +1,18 @@
-# react-video-js-player
+# @csod-oss/react-video-js-player
 
 React wrapper for VideoJS. [Live Demo](https://karan101292.github.io/react-video-js-player/)
 
 ## Install
 
 ```
-npm install --save react-video-js-player
+npm install --save @csod-oss/react-video-js-player
 ```
 
 ## Usage
 
 ```javascript
 import React, { Component } from 'react';
-import VideoPlayer from 'react-video-js-player';
+import VideoPlayer from '@csod-oss/react-video-js-player';
 
 class VideoApp extends Component {
   player = {};
@@ -171,7 +171,7 @@ export default VideoApp;
     <tr>
       <td>withCredentials</td>
       <td><code>boolean</code></td>
-      <td><code>false</code></td>
+      <td><code>true</code></td>
       <td>When the <code>withCredentials</code> property is set to <code>true</code>, all XHR requests for manifests and segments would have <code>withCredentials</code> set to <code>true</code> as well. This enables storing and passing cookies from the server that the manifests and segments live on. This has some implications on CORS because when set, the <code>Access-Control-Allow-Origin</code> header cannot be set to *, also, the response headers require the addition of <code>Access-Control-Allow-Credentials</code> header which is set to <code>true</code>. See <a href="http://www.html5rocks.com/en/tutorials/cors/" rel="nofollow">html5rocks's article</a> for more info.</td>
     </tr>
   </tbody>
