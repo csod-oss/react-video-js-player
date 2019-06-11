@@ -1,6 +1,7 @@
 # Change Log
 
-| Version | Summary                      |
-| ------- | ---------------------------- |
-| 1.1.2   | Added option for HLS support |
-| 1.1.1   | Initial Release              |
+| Version | Summary                        |
+| ------- | ------------------------------ |
+| 1.1.3   | Additional fix for HLS support |
+| 1.1.2   | Added option for HLS support   |
+| 1.1.1   | Initial Release                |
