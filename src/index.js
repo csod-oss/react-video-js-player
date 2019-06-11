@@ -33,15 +33,18 @@ class VideoPlayer extends Component {
 
   generate_player_options(props) {
     const playerOptions = {};
+    const hidePlaybackRates = props.hidePlaybackRates || props.hideControls.includes('playbackrates');
+    const html5Options = {};
+    if (props.withCredentials) html5Options = { hls: { withCredentials: true } };
+
     playerOptions.autoplay = props.autoplay;
     playerOptions.bigPlayButton = props.bigPlayButton;
     playerOptions.controls = props.controls;
     playerOptions.height = props.height;
+    playerOptions.html5 = html5Options;
+    if (!hidePlaybackRates) playerOptions.playbackRates = props.playbackRates;
     playerOptions.preload = props.preload;
     playerOptions.width = props.width;
-    playerOptions.withCredentials = props.withCredentials;
-    const hidePlaybackRates = props.hidePlaybackRates || props.hideControls.includes('playbackrates');
-    if (!hidePlaybackRates) playerOptions.playbackRates = props.playbackRates;
     return playerOptions;
   }
 
@@ -121,6 +124,7 @@ VideoPlayer.propTypes = {
   onSeeked: PropTypes.func,
   onSeeking: PropTypes.func,
   onTimeUpdate: PropTypes.func,
+  overrideNative: PropTypes.bool,
   playbackRates: PropTypes.arrayOf(PropTypes.number),
   poster: PropTypes.string,
   preload: PropTypes.oneOf(['auto', 'none', 'metadata']),
@@ -144,6 +148,7 @@ VideoPlayer.defaultProps = {
   onSeeked: () => {},
   onSeeking: () => {},
   onTimeUpdate: () => {},
+  overrideNative: false,
   playbackRates: [0.5, 1, 1.5, 2],
   poster: '',
   preload: 'auto',
